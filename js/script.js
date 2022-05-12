@@ -1,11 +1,9 @@
-/******************************************
- *****************************************/
+"use strict";
+
 // variable storing the current quote displayed, this is used to avoid repeating the same quote
 let currentQuote;
 
-/***
- * `quotes` array
- ***/
+// list of quotes
 const quotes = [
   {
     quote: "Be yourself and people will like you.",
@@ -63,9 +61,10 @@ const quotes = [
   },
 ];
 
-/***
- * `getRandomQuote` function
- ***/
+/**
+ * returns a different random quote from quotes array
+ * @returns object
+ */
 function getRandomQuote() {
   let newQuote;
 
@@ -79,9 +78,9 @@ function getRandomQuote() {
   return quotes[currentQuote];
 }
 
-/***
- * `printQuote` function
- ***/
+/**
+ * assign inner HTML with quote information to container
+ */
 function printQuote() {
   // getting a new random quote
   const randomQuote = getRandomQuote();
@@ -111,10 +110,5 @@ function printQuote() {
   document.getElementById("quote-box").innerHTML = ptoHTML1;
 }
 
-/***
- * click event listener for the print quote button
- * The code will look like the following. You need to complete it.
-
-***/
-
+// attach an event listener to load-quote to print a new quote
 document.getElementById("load-quote").addEventListener("click", printQuote);
