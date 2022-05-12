@@ -61,6 +61,8 @@ const quotes = [
   },
 ];
 
+console.log({ quotes });
+
 /**
  * returns a different random quote from quotes array
  * @returns object
@@ -84,8 +86,10 @@ function getRandomQuote() {
 function printQuote() {
   // getting a new random quote
   const randomQuote = getRandomQuote();
+  console.log({ randomQuote });
   // destructuring quote for easier use in code
   const { quote, source, citation, year } = randomQuote;
+  console.log({ source });
   // concatenating HTML to display
   let ptoHTML1 = `
     <p class='quote'>${quote}</p>
@@ -108,6 +112,7 @@ function printQuote() {
   ptoHTML1 += "</p>";
 
   document.getElementById("quote-box").innerHTML = ptoHTML1;
+  console.log({ CompleteHTML: ptoHTML1 });
 }
 
 // attach an event listener to load-quote to print a new quote
